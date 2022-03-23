@@ -1,0 +1,54 @@
+.btn{
+    font-size: $text-15;
+    font-weight: $font-normal;
+    border-radius: $border-radius;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+    border: none;
+    //Button
+&--primary{
+    color: $color-white;
+    background: $color-blue;
+}
+&--secondary{
+    color: $theme-dark;
+    background-color: $color-secondary;
+}
+&--outline{
+    color: $color-blue;
+    background-color: $color-white;
+    border: 1px solid $border-outline;
+}
+&--dark-grey{
+    color: $color-white;
+    background-color: $theme-dark;
+}
+&--outline-border{
+    background-color: $color-white;
+    border: 1px solid $btn-border-color;
+}
+//Button 
+// button Size
+&--sm{
+    padding: 6px 10px 6px 10px;
+}
+&--base{
+    padding: 9px 15px 10px 15px;
+}
+&--lg{
+    padding: 14px 20px;
+    border: none;
+}
+&--xl{
+    width: 100%;
+    padding: 10px 15px;
+}
+
+// button Size
+}
+
+
+
+
+  
+

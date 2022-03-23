@@ -1,0 +1,259 @@
+.hero-wrapper{
+    width: 100%;
+    height: 100vh;
+}
+
+// Navbar
+.nav{
+    width: 100%;
+    display: flex;
+    box-shadow: 0px 4px 4px 0px #D2E7FA7A;
+    height: 64px;
+}
+.nav-left{
+    width: 17%;
+    padding: 16px 0px 16px 22px;
+    border-right: 1px solid $border-color;
+}
+.nav-right{
+    width: 100%;
+    display: flex;
+    padding: 8px 8px 8px 36px;
+        &__title{
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            h2{
+                font-size: $text-2xl;
+                font-weight: $font-normal;
+                color: $color-primary;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        &__menu{
+            display: flex;
+            .btn:nth-child(3){
+                img{
+                    margin-right: 0;
+                }
+            }
+            .btn{
+                margin-right: 8px;
+                display: flex;
+                align-items: center;
+                img{
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+// End Navbar
+
+// Main Wrapper
+.main-wrapper{
+    width: 100%;
+    height: calc(100vh - 64px);
+    display: flex;
+    margin-top: 1px;
+}
+// End Main Wrapper
+
+// Scrollbar
+.center-wrapper::-webkit-scrollbar{
+    width: 2px;
+    height: 2px;    
+}
+::-webkit-scrollbar-track{
+    background-color: white;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $btn-border-color;
+    border-radius: 6px;
+    &:hover{
+        background-color: $text-light-grey;
+    }
+}
+// End Scrollbar
+
+// Center
+.bulk-send{
+    position: relative;
+    width: 970px;
+    padding: 23px 33px 10px 38px;
+    &::after{
+        content: '';
+        position: absolute;
+        background: $table-bg-color;
+        opacity: 0.3;
+        filter: blur(100px);
+        top: 0;
+        left: 0;
+        width: 600px;
+        height: 375px;
+        z-index: -1;
+        transform: translate(30%, 30%);
+    }
+    &__heading{
+        .document-list{
+            font-size: $text-xs;
+            font-weight: $font-normal;
+            color: $text-blue-grey;
+            opacity: .8;
+            margin-bottom: 8px;
+            display: flex;
+            li::after{
+                content: '/';
+                color: $text-blue-grey;
+            }
+            li:last-child{
+                color: $color-blue;
+                &::after{
+                    display: none;
+                }
+            }
+        }
+        h2{
+            color: $theme-dark-grey;
+            font-size: $text-xl;
+            font-weight: $font-bold;
+            margin-bottom: 16px;
+        }
+        
+        border-bottom: 1px solid rgba(123, 141, 158, .4);
+        margin-bottom: 60px;
+    }
+
+    .card{
+        text-align: center;
+        border: 1px dashed $active-color;
+        border-radius: $border-radius;
+        background-color: $color-white;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 23px 40px 30px 40px;
+        width: 46%;
+        height: 312px;
+        margin: auto;
+        margin-bottom: 27px;
+        &__upload-image{
+            margin-bottom: 36px;
+        }
+        &__download-csv{
+            li{
+                width: 156px;
+                margin-bottom: 26px;
+                text-decoration: underline;
+                cursor: pointer;    
+                margin: auto;
+                color: $color-blue;
+            }
+        }
+        &__delete-image{
+        display: block;
+        width: 10%;
+        height: 18px;
+        margin-top: 8px;
+        }
+        &__document-info{
+            font-size: $text-xs;
+            font-weight: $font-normal;
+            color: $text-light-grey;
+            .support-csv{
+                margin-bottom: 6px;
+            }
+        }
+    }
+
+
+    .input-upload{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .input-section.active{
+            .input-section__new-file{
+                display: block;
+            }
+        }
+    }
+    .input-section{
+        position: relative;
+        margin-top: 26px;
+        margin-bottom: 16px;
+        width: 95%;
+        height: 39px;
+        // margin-right: 10px;
+        overflow: hidden;
+        border: 1px solid $active-color;
+        border-radius: $border-radius;
+        box-shadow: $upload-box-shadow;
+        &__input{
+            opacity: 0;
+            width: 0.1px;
+            height: 0.1px;
+            position: absolute;
+        }
+        &__select-file{
+            display: block;
+            display: flex;
+            justify-content: flex-start;
+            width: 50%;
+            position: absolute;
+            font-size: $text-15;
+            font-weight: $font-medium;
+            color: $upload-text-color;
+            top: 10px;
+            left: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &__upload{
+            position: absolute;
+            font-size: $text-15;
+            font-weight: $font-bold;
+            color: $active-color;
+            width: 97px;
+            height: 22px;
+            top: 10px;
+            right: 16px;
+            cursor: pointer;
+        }
+        &__new-file{
+            position: absolute;
+            display: none;
+            font-size: $text-15;
+            font-weight: $font-medium;
+            color: $theme-dark-grey;
+            width: 150px;
+            height: 37px;
+            top: 0px;
+            left: 0px;
+            padding: 10px;
+            background-color: $upload-file-color;
+            z-index: 2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &::before{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 150px;
+                height: 37px;
+                background-color: red;
+                z-index: 3;
+            }
+        }
+    }
+    &__footer{
+        width: 46%;
+        margin: auto;
+        display: flex;
+        justify-content: flex-end; 
+        .cancel{
+            margin-right: 12px;
+        }
+    }
+}
+// End Center
